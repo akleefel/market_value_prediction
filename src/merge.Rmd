@@ -1,0 +1,53 @@
+---
+title: "merging"
+author: "Alexander Kleefeldt"
+date: "July 18, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, message=FALSE}
+library(tidyverse)
+library(readr)
+library(lubridate)
+```
+
+```{r}
+#loading transfermarkt data set and adjusting date & name to improve merging with fifa data set
+tm_df <- read.csv("tm_final.csv")
+
+tm_df <- tm_df %>% 
+  mutate(Geburtsdatum. = as.character(Geburtsdatum.)) %>% 
+  mutate(Vollständiger.Name. = as.character(Vollständiger.Name.)) %>% 
+  mutate(X = as.character(X)) 
+  
+
+tm_df <- tm_df %>% 
+  mutate(Geburtsdatum. = as.Date(Geburtsdatum., "%d.%m.%Y"))
+```
+
+```{r, message=FALSE}
+#loading fifa data set and adjusting name format to improve merging of data frames
+
+fifa_df <- read_csv("fifa.csv")
+
+fifa_df <- fifa_df %>% 
+  mutate(name_length = sapply(strsplit(full_name, " "), length)) %>% 
+  mutate(match_name = ifelse(name_length > 2, name, full_name)) 
+```
+
+
+```{r}
+#merging 
+merged_df <- merge(x = tm_df, y = fifa_df, by.x = c("X", "Geburtsdatum."), by.y = c("match_name","birth_date"))
+```
+
+```{r}
+#exporting
+write.csv(merged_df, file = "players_full.csv")
+```
+
+
