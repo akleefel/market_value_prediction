@@ -4,7 +4,7 @@
 
 For this project, I scraped performance data of football players from [Transfermarkt.de](transfermarkt.de) and merged it with [Kaggle's FIFA '18](https://www.kaggle.com/kevinmh/fifa-18-more-complete-player-dataset) data set to build a **predictive model for players' market value based on physical attributes, performance data, and skills.** 
 
-**Currently, the best performing model uses sklearns `GradientBoostingRegressor()` and achieve a validation accurary of ~80%**
+**Currently, the best performing model uses sklearns `GradientBoostingRegressor()` and achieves a validation accurary of ~80% when predicting the market value of unseen players**
 
 The next, step in this project will be to **identify overvalued/undervalued** players by excluding some players in the training phase of the model and comparing their predicted market value to their market value listed on transfermarkt.de.
 
