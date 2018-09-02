@@ -15,9 +15,9 @@ The next, step in this project will be to **identify overvalued/undervalued** pl
 The [data set scraped from transfermarkt.de](data/tm.csv) contains features of approx. 5000 football players from 15 European top leagues. In the raw data, some of the feature names are in German and others are non-descriptive (I'll change that soon) - below I have listed how I intend to change them: in English & with descriptive names.  
 
 
-* **The first 8 variables contain general information** on the player:
+**The first 8 variables contain general information** on the player:
 
-* 'birth_month' 
+* 'birth_month'
 * 'days_on_team'
 * 'days_contr_end'
 * 'days_since_contr'
@@ -27,9 +27,7 @@ The [data set scraped from transfermarkt.de](data/tm.csv) contains features of a
 * 'social_media'
 
 
-
-
-* **The other variables contain the following performance data** for each league:
+**The other variables contain the following performance data** for each league:
 
 1. For outfield players:
 
