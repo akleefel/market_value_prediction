@@ -12,19 +12,19 @@ The next, step in this project will be to **identify overvalued/undervalued** pl
 
 #### Transfermarkt.de
 
-The ![data set scraped from transfermarkt.de](data/tm.csv) contains features of approx. 5000 football players from 15 European top leagues. In the raw data, some of the feature names are in German and others are non-descriptive (I'll change that soon) - below I have listed how I intend to change them: in English & with descriptive names.  
+The [data set scraped from transfermarkt.de](data/tm.csv) contains features of approx. 5000 football players from 15 European top leagues. In the raw data, some of the feature names are in German and others are non-descriptive (I'll change that soon) - below I have listed how I intend to change them: in English & with descriptive names.  
 
 
 **The first 8 variables contain general information** on the player:
 
 |'birth_month'|'days_on_team'|'days_contr_end'|'days_since_contr'|'Alter.'|'Größe.'|'Social.Media.'|
-|---|---|---|---|||
+|---|---|---|---|---|---|---|
 
 
 **The other variables contain the following performance data** for each league:
 
 |'games_played_[LEAGUE]'|'goals_scored_[LEAGUE]'|'assists_[LEAGUE]'|'num_yellow_cards_[LEAGUE]'|'num_second_yellow_[LEAGUE]'|'num_red_card_[LEAGUE]'|'minutes_played_[LEAGUE]'|
-|---|---|----|----|----|----|
+|---|---|----|----|----|----|----|
 
 
 ### Kaggle FIFA '18
@@ -41,9 +41,9 @@ In this repository the data is saved here: [Kaggle FIFA '18 in Repo](data/fifa.c
 
 ### merge.Rmd
 
-![merge.Rmd](src/merge.Rmd) takes the two data sets ([Kaggle FIFA '18](data/fifa.csv), [Transfermarkt.de](data/tm.csv)) and merges them on 'name' and 'birth_date' assuming that these two variables together constitute a unique identifier.
+[merge.Rmd](src/merge.Rmd) takes the two data sets ([Kaggle FIFA '18](data/fifa.csv), [Transfermarkt.de](data/tm.csv)) and merges them on 'name' and 'birth_date' assuming that these two variables together constitute a unique identifier.
 
 
 ### mv_prediction.ipynb
 
-![mv_prediction.ipynb](mv_prediction.ipynb) uses the merged data set created by ![merge.Rmd](src/merge.Rmd) does some cleaning and feature engineering and finally test different machine learning models to predict the players market value.
+[mv_prediction.ipynb](mv_prediction.ipynb) uses the merged data set created by ![merge.Rmd](src/merge.Rmd) does some cleaning and feature engineering and finally test different machine learning models to predict the players market value.
