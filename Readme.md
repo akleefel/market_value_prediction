@@ -71,4 +71,4 @@ In this repository the data is saved here: [Kaggle FIFA '18 in Repo](data/fifa.c
 
 ### mv_prediction.ipynb
 
-[mv_prediction.ipynb](mv_prediction.ipynb) uses the merged data set created by ![merge.Rmd](src/merge.Rmd) does some cleaning and feature engineering and finally test different machine learning models to predict the players market value.
+[mv_prediction.ipynb](mv_prediction.ipynb) uses the merged data set created by [merge.Rmd](src/merge.Rmd) does some cleaning and feature engineering and finally test different machine learning models to predict the players market value.
