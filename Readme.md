@@ -17,21 +17,41 @@ The [data set scraped from transfermarkt.de](data/tm.csv) contains features of a
 
 * **The first 8 variables contain general information** on the player:
 
-|'birth_month'|'days_on_team'|'days_contr_end'|'days_since_contr'|'Alter.'|'Größe.'|'position'|'Social.Media.'|
-|---|---|---|---|---|---|---|
+* 'birth_month' 
+* 'days_on_team'
+* 'days_contr_end'
+* 'days_since_contr'
+* 'age'
+* 'height'
+* 'position'
+* 'social_media'
+
+
 
 
 * **The other variables contain the following performance data** for each league:
 
 1. For outfield players:
 
-|'games_played_[LEAGUE]'|'goals_scored_[LEAGUE]'|'assists_[LEAGUE]'|'num_yellow_cards_[LEAGUE]'|'num_second_yellow_[LEAGUE]'|'num_red_card_[LEAGUE]'|'minutes_played_[LEAGUE]'|
-|---|---|----|----|----|----|----|
+* 'games_played_[LEAGUE]'
+* 'goals_scored_[LEAGUE]'
+* 'assists_[LEAGUE]'
+* 'num_yellow_cards_[LEAGUE]'
+* 'num_second_yellow_[LEAGUE]'
+* 'num_red_card_[LEAGUE]'
+* 'minutes_played_[LEAGUE]'
 
 2. For goalkeepers: 
 
-|'games_played_[LEAGUE]'|'goals_scored_[LEAGUE]'|'num_yellow_cards_[LEAGUE]'|'num_second_yellow_[LEAGUE]'|'num_red_card_[LEAGUE]'|goals_against_[LEAGUE]'|'shutouts_[LEAGUE]'|'minutes_played_[LEAGUE]'|
-|---|---|----|----|----|----|----|---|---|
+* 'games_played_[LEAGUE]'
+* 'goals_scored_[LEAGUE]'
+* 'num_yellow_cards_[LEAGUE]'
+* 'num_second_yellow_[LEAGUE]'
+* 'num_red_card_[LEAGUE]'
+* 'goals_against_[LEAGUE]'
+* 'shutouts_[LEAGUE]'
+* 'minutes_played_[LEAGUE]'
+
 
 
 ### Kaggle FIFA '18
