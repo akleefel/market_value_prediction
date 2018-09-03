@@ -9,19 +9,29 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+This script merges, the data scraped from Transfermarkt.de with the data from the FIFA '18 data set. The data is merged based on name and birth date of the player assuming that this consitutes a unique identifier. 
+
+```{r}
+install.packages('readr')
+install.packages('lubridate')
+```
+
+
+
 ```{r, message=FALSE}
 library(tidyverse)
 library(readr)
 library(lubridate)
 ```
 
+
 ```{r}
 #loading transfermarkt data set and adjusting date & name to improve merging with fifa data set
-tm_df <- read.csv("tm_final.csv")
+tm_df <- read.csv("../data/tm.csv",  header = TRUE, fileEncoding = "latin1")
 
 tm_df <- tm_df %>% 
   mutate(Geburtsdatum. = as.character(Geburtsdatum.)) %>% 
-  mutate(Vollständiger.Name. = as.character(Vollständiger.Name.)) %>% 
+  mutate(VollstÃ¤ndiger.Name. = as.character(VollstÃ¤ndiger.Name.)) %>% 
   mutate(X = as.character(X)) 
   
 
@@ -32,7 +42,7 @@ tm_df <- tm_df %>%
 ```{r, message=FALSE}
 #loading fifa data set and adjusting name format to improve merging of data frames
 
-fifa_df <- read_csv("fifa.csv")
+fifa_df <- read_csv("../data/fifa.csv")
 
 fifa_df <- fifa_df %>% 
   mutate(name_length = sapply(strsplit(full_name, " "), length)) %>% 
@@ -47,7 +57,7 @@ merged_df <- merge(x = tm_df, y = fifa_df, by.x = c("X", "Geburtsdatum."), by.y 
 
 ```{r}
 #exporting
-write.csv(merged_df, file = "players_full.csv")
+write.csv(merged_df, file = "../results/players_merged.csv")
 ```
 
 
